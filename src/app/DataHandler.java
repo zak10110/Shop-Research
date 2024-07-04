@@ -1,11 +1,14 @@
 package app;
 
 public class DataHandler {
-    public String handleData(Object[] items) {
+    // Узагальнений метод, який має параметр як масив узагальненого типу
+    // та повертає String значення обробленого масиву
+    public <T> String handleData(T[] items) {
         StringBuilder sb = new StringBuilder();
         int count = 0;
+
         // Цикл обробки масиву узагальненого типу
-        for (Object item : items) {
+        for (T item : items) {
             count++;
             sb.append(String.format("(%d) %s ", count, item));
         }
